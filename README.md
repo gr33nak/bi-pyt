@@ -14,6 +14,8 @@ pip install -r requirements.txt
 
 ## Usage
 
+First of all you need to download file czech_elevation.tif into your directory (other than the ones available in this repository) - the needed code is in file RCzechia_data.R
+
 Run the main script run_main.py, input an address and get the risk assessment:
 
 python run_main.py
