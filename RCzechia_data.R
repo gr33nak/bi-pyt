@@ -1,0 +1,20 @@
+#Packages
+library(RCzechia)
+library(terra)
+library(raster)
+
+#Code
+cropped_extent <- vyskopis("actual")
+plot(cropped_extent, col = gray.colors(16))
+writeRaster(cropped_extent, "czech_elevation.tif", filetype = "GTiff", overwrite = TRUE)
+print(cropped_extent)
+water_bodies <- plochy()
+sf::write_sf(water_bodies, "water_bodies.geojson")
+rivers <- reky()
+sf::write_sf(rivers, "rivers.geojson")
+regions <- kraje()
+sf::write_sf(regions, "regions.geojson")
+forests <- lesy()
+sf::write_sf(forests, "forests.geojson")
+border <- republika()
+sf::write_sf(border, "border.geojson")
